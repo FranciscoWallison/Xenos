@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "MainDlg.h"
 #include "DumpHandler.h"
 #include "DriverExtract.h"
@@ -61,10 +61,10 @@ void AssociateExtension()
 void LogOSInfo()
 {
     SYSTEM_INFO info = { 0 };
-    char* osArch = "x64";
+    const char* osArch = "x64";  // ✅ Correto agora
 
     auto pPeb = (blackbone::PEB_T*)NtCurrentTeb()->ProcessEnvironmentBlock;
-    GetNativeSystemInfo( &info );
+    GetNativeSystemInfo(&info);
 
     if (info.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_INTEL)
         osArch = "x86";
@@ -77,8 +77,9 @@ void LogOSInfo()
         pPeb->OSBuildNumber,
         osArch,
         blackbone::Driver().status()
-        );
+    );
 }
+
 
 /// <summary>
 /// Parse command line string

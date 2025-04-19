@@ -1,7 +1,7 @@
 #pragma once
 
-#include <BlackBone/src/BlackBone/Config.h>
-#include <BlackBone/src/BlackBone/Misc/Utils.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Config.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Misc/Utils.h>
 
 #include <string>
 #include <sstream>

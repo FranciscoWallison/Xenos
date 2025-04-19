@@ -4,10 +4,10 @@
 #include "ProfileMgr.h"
 #include "Log.h"
 
-#include <BlackBone/src/BlackBone/Config.h>
-#include <BlackBone/src/BlackBone/Process/Process.h>
-#include <BlackBone/src/BlackBone/PE/PEImage.h>
-#include <BlackBone/src/BlackBone/Misc/Utils.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Config.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Process/Process.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/PE/PEImage.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Misc/Utils.h>
 
 typedef std::vector<std::shared_ptr<blackbone::pe::PEImage>> vecPEImages;
 typedef std::vector<blackbone::pe::vecExports> vecImageExports;
@@ -115,11 +115,12 @@ private:
     /// <param name="img">Target image</param>
     /// <param name="initRVA">Init function RVA</param>
     /// <returns>Error code</returns>
-    NTSTATUS InjectionCore::InjectKernel(
+    NTSTATUS InjectKernel(
         InjectContext& context,
         const blackbone::pe::PEImage& img,
         uint32_t initRVA /*= 0*/
-        );
+    );
+
 
     /// <summary>
     /// Manually map another system driver into system space

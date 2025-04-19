@@ -105,10 +105,10 @@ void ModulesDlg::RefreshList( )
     for (auto& mod : modsAll)
     {
         wchar_t address[64];
-        wchar_t* platfom = nullptr;
-        wchar_t* detected = nullptr;
+        const wchar_t* platfom = nullptr;
+        const wchar_t* detected = nullptr;
 
-        wsprintf( address, L"0x%08I64x", mod.second->baseAddress );
+        wsprintf(address, L"0x%08I64x", mod.second->baseAddress);
 
         // Module platform
         if (mod.second->type == blackbone::mt_mod32)
@@ -121,15 +121,16 @@ void ModulesDlg::RefreshList( )
         // Mapping type
         if (mod.second->manual == true)
             detected = L"Manual map";
-        else if (modsLdr.count( mod.first ))
+        else if (modsLdr.count(mod.first))
             detected = L"Normal";
-        else if (modsSec.count( mod.first ))
+        else if (modsSec.count(mod.first))
             detected = L"Section only";
-        else if (mod.second->name.find( L"Unknown_0x" ) == 0)
+        else if (mod.second->name.find(L"Unknown_0x") == 0)
             detected = L"PE header";
         else
             detected = L"Unknown";
 
-        _modList.AddItem( mod.second->name, static_cast<LPARAM>(mod.second->baseAddress), { address, platfom, detected } );
+        _modList.AddItem(mod.second->name, static_cast<LPARAM>(mod.second->baseAddress), { address, platfom, detected });
     }
+
 }

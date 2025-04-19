@@ -334,9 +334,9 @@ DWORD MainDlg::LoadImageFile( const std::wstring& path )
 /// </summary>
 /// <param name="path">Loaded image</param>
 /// <param name="exports">Module exports</param>
-void MainDlg::AddToModuleList( std::shared_ptr<blackbone::pe::PEImage>& img )
+void MainDlg::AddToModuleList(std::shared_ptr<blackbone::pe::PEImage>& img)
 {
-    wchar_t* platfom = nullptr;
+    const wchar_t* platfom = nullptr;
 
     // Module platform
     if (img->mType() == blackbone::mt_mod32)
@@ -346,6 +346,7 @@ void MainDlg::AddToModuleList( std::shared_ptr<blackbone::pe::PEImage>& img )
     else
         platfom = L"Unknown";
 
-    _images.emplace_back( img );
-    _modules.AddItem( blackbone::Utils::StripPath( img->path() ), 0, { platfom } );
+    _images.emplace_back(img);
+    _modules.AddItem(blackbone::Utils::StripPath(img->path()), 0, { platfom });
 }
+

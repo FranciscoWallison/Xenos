@@ -1,5 +1,5 @@
 #include "ProfileMgr.h"
-#include <BlackBone/src/BlackBone/Misc/Utils.h>
+#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Misc/Utils.h>
 
 #define CURRENT_PROFILE L"\\XenosCurrentProfile.xpr"
 
@@ -57,8 +57,8 @@ bool ProfileMgr::Load( const std::wstring& path /*= L""*/ )
         if(xml.has( L"XenosConfig.imagePath" ))
         {
             auto nodes = xml.all_nodes_named( L"XenosConfig.imagePath" );
-            for (auto& node : nodes)
-                _config.images.emplace_back( node.value() );
+            for (auto node : nodes)
+                _config.images.emplace_back(std::wstring{ node.value() });
         }
 
         xml.get_if_present( L"XenosConfig.manualMapFlags",  _config.mmapFlags );
