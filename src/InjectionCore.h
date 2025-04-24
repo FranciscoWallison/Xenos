@@ -4,10 +4,10 @@
 #include "ProfileMgr.h"
 #include "Log.h"
 
-#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Config.h>
-#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Process/Process.h>
-#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/PE/PEImage.h>
-#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Misc/Utils.h>
+#include <../Blackbone/src/BlackBone/Config.h>
+#include <../Blackbone/src/BlackBone/Process/Process.h>
+#include <../Blackbone/src/BlackBone/PE/PEImage.h>
+#include <../Blackbone/src/BlackBone/Misc/Utils.h>
 
 typedef std::vector<std::shared_ptr<blackbone::pe::PEImage>> vecPEImages;
 typedef std::vector<blackbone::pe::vecExports> vecImageExports;

@@ -1,5 +1,5 @@
 #include "InjectionCore.h"
-#include <C:/Users/walli/Documents/Xenos/BlackBone/src/BlackBone/Process/RPC/RemoteFunction.hpp>
+#include <../Blackbone/src/BlackBone/Process/RPC/RemoteFunction.hpp>
 #include <iterator>
 
 InjectionCore::InjectionCore( HWND& hMainDlg )
